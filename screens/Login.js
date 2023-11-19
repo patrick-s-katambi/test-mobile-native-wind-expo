@@ -1,10 +1,11 @@
-import { Link } from "@react-navigation/native";
 import clsx from "clsx";
 import { StatusBar } from "expo-status-bar";
-import { useCallback, useState } from "react";
-import { SafeAreaView, ScrollView, TextInput, View } from "react-native";
-import { Button, Text, TextField } from "react-native-ui-lib";
+import { SafeAreaView, ScrollView, View } from "react-native";
+import { Text } from "react-native-ui-lib";
 import { object, string } from "yup";
+import { LoginForm } from "../components/LoginForm/LoginForm";
+import loginApi from "../services/loginApi";
+import { Logo } from "../components/Logo";
 
 let loginSchema = object({
     username: string().email(),
@@ -12,60 +13,18 @@ let loginSchema = object({
 });
 
 export default function LoginScreen() {
-    const [formValues, setFormValues] = useState({ username: "", password: "" });
-    const onChangeText = useCallback(
-        (inputKey, text) => setFormValues({ ...formValues, [inputKey]: text }),
-        [formValues]
-    );
-
-    const onSubmit = useCallback(({ schema, formData }) => {
-        try {
-            const errors = schema.validate(formData);
-            errors && console.log("errors", errors);
-        } catch (error) {
-            throw "error";
-        }
-    }, []);
-
     return (
         <SafeAreaView>
             <ScrollView showsVerticalScrollIndicator={undefined} className={clsx("bg-white h-full px-2 pt-4")}>
-                <Text h3 className="mb-4">
-                    Login
+                <Logo />
+                <Text className="mt-2 mb-4 text-base font-bold text-center">
+                    Nice to see you again, let's get back to work!
                 </Text>
+                {/* <Text className="mb-4 text-gray-500 text-center text-sm">Step 2 of 3-steps-registration</Text> */}
 
-                <TextField
-                    label="Username"
-                    placeholder={"Username"}
-                    value={formValues.username}
-                    onChangeText={(text) => onChangeText("username", text)}
-                    showCharCounter
-                    maxLength={30}
-                    className="p-2 rounded mb-1 bg-gray-200"
-                    keyboardType="email-address"
-                />
+                <LoginForm loginApi={loginApi} />
 
-                <TextField
-                    label={"Password"}
-                    placeholder={"Password"}
-                    value={formValues.password}
-                    onChangeText={(text) => onChangeText("password", text)}
-                    showCharCounter
-                    maxLength={6}
-                    className="p-2 rounded mb-1 bg-gray-200"
-                    secureTextEntry
-                />
-                <Button
-                    label="Login"
-                    className="w-full mt-2"
-                    onPress={() => onSubmit({ schema: loginSchema, formData: formValues })}
-                />
-                {/* <LoaderScreen color={Colors.grey40} /> */}
-                <View className="mt-4 w-full flex items-center justify-center">
-                    <Link to={"/Register"}>
-                        <Text className="text-blue-500">Go to register</Text>
-                    </Link>
-                </View>
+                <View className="mb-10"></View>
             </ScrollView>
             <StatusBar style="auto" />
         </SafeAreaView>
