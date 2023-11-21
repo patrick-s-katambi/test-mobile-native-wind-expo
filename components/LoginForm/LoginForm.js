@@ -13,7 +13,7 @@ export function LoginForm({ loginApi }) {
                 label="Username"
                 value={hook.form.username}
                 onChangeText={(text) => hook.onChangeText("username", text)}
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-4"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-4"
                 placeholder="email@mail.com or 0784758392"
             />
             <TextField
@@ -23,7 +23,7 @@ export function LoginForm({ loginApi }) {
                 value={hook.form.password}
                 onChangeText={(text) => hook.onChangeText("password", text)}
                 secureTextEntry
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-1"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-1"
                 placeholder="your password"
                 showCharCounter
             />

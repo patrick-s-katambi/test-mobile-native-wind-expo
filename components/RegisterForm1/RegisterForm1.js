@@ -17,7 +17,7 @@ export function RegisterForm1({ sendOtpApi = async () => {}, goToNextStep }) {
                 }}
                 maxLength={9}
                 showCharCounter
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-1"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-1"
                 placeholder="785948549"
                 label="Phone Number"
                 leadingAccessory={<Text className="mr-2">+255</Text>}

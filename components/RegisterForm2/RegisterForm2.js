@@ -14,7 +14,7 @@ export function RegisterForm2({ registerApi, phoneParam = "", goBack, onErrorNsv
                 maxLength={30}
                 placeholder="Juma Shops"
                 label="Username"
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-1"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-1"
                 value={hook.form.username}
                 onChangeText={(text) => hook.onChangeFormValue("username", text)}
             />
@@ -25,7 +25,7 @@ export function RegisterForm2({ registerApi, phoneParam = "", goBack, onErrorNsv
                 showCharCounter
                 maxLength={40}
                 minLength={1}
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-1"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-1"
                 value={hook.form.email}
                 onChangeText={(text) => hook.onChangeFormValue("email", text)}
                 keyboardType="email-address"
@@ -36,7 +36,7 @@ export function RegisterForm2({ registerApi, phoneParam = "", goBack, onErrorNsv
                 label="First Name"
                 showCharCounter
                 maxLength={30}
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-1"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-1"
                 value={hook.form.firstName}
                 onChangeText={(text) => hook.onChangeFormValue("firstName", text)}
             />
@@ -46,7 +46,7 @@ export function RegisterForm2({ registerApi, phoneParam = "", goBack, onErrorNsv
                 label="Last Name"
                 showCharCounter
                 maxLength={30}
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-1"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-1"
                 value={hook.form.lastName}
                 onChangeText={(text) => hook.onChangeFormValue("lastName", text)}
             />
@@ -54,7 +54,7 @@ export function RegisterForm2({ registerApi, phoneParam = "", goBack, onErrorNsv
                 testID="dob-field"
                 placeholder="your date of birth"
                 label="Date of Birth"
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-1"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-1"
                 value={hook.form.dob}
                 onChangeText={(text) => hook.onChangeFormValue("dob", text)}
             />
@@ -65,7 +65,7 @@ export function RegisterForm2({ registerApi, phoneParam = "", goBack, onErrorNsv
                 showCharCounter
                 maxLength={68}
                 minLength={6}
-                className="bg-gray-100 border border-gray-300 p-2 rounded mb-1"
+                className="bg-gray-50 border border-gray-300 p-2 rounded mb-1"
                 secureTextEntry
                 value={hook.form.password}
                 onChangeText={(text) => hook.onChangeFormValue("password", text)}

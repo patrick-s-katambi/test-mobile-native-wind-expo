@@ -2,15 +2,13 @@ import clsx from "clsx";
 import { View } from "react-native";
 import { Text } from "react-native-ui-lib";
 
-export function Logo({ centered, spaceBelow = true }) {
+export function Logo({ centered, spaceBelow = true, small = false }) {
     return (
-        <View
-            className={clsx("flex flex-row gap-0 items-center mt-4", centered && "self-center", spaceBelow && "mb-4")}
-        >
-            <Text className="text-xl font-black text-gray-500">Shop</Text>
-            <Text className="text-xl font-black text-blue-300">Kon</Text>
+        <View className={clsx("flex flex-row gap-0 items-center", centered && "self-center", spaceBelow && "my-4")}>
+            <Text className={clsx("font-black text-gray-500", small ? "text-sm" : "text-xl")}>Shop</Text>
+            <Text className={clsx("font-black text-blue-500", small ? "text-sm" : "text-xl")}>Kon</Text>
             <View className="bg-blue-500 px-1 rounded-lg">
-                <Text className="text-xl font-black text-white">ekt.</Text>
+                <Text className={clsx("font-black text-white", small ? "text-sm" : "text-xl")}>ekt.</Text>
             </View>
         </View>
     );
